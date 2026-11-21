@@ -128,5 +128,14 @@ follow-up.
 
 ## Kit check, second run (8-file tree, after CHECK.md was added)
 
-- [To be filled by the builder after pushing CHECK.md: command, result,
-  snapshot size, GitHub HEAD.]
+- Command: same as above, run 2026-11-21 ~05:14 WIB.
+- Result: **4 passed, 1 failed, 14 skipped, 5 checked at submission** —
+  identical to the first run. Snapshot: 8 files, 381,210 bytes, at local
+  commit `c4ae77303b4fd76591e5706ce5f255b14cd9bf06` (the commit that added
+  CHECK.md). The only failure is again transcripts_present (see Transcripts
+  above); nothing else moved.
+- This section was filled in after the second run, so the CHECK.md now on
+  GitHub differs from the one the second run saw only in this section's
+  text. Final GitHub HEAD after pushing the filled-in CHECK.md is recorded
+  in the build report, not here (writing it here would change the file
+  again).
