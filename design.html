@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>One Day, Everywhere — Saturday 21 November 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #e6dfd0; }
+  body { font-family: Georgia, 'Times New Roman', 'DejaVu Serif', serif; color: #17130d; }
+  .page {
+    width: 1024px; height: 1024px;
+    background: #f9f5ea; margin: 0 auto; padding: 10px 28px 6px;
+    overflow: hidden; position: relative;
+  }
+  /* ---- top line ---- */
+  .topline {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: 'DejaVu Sans', Arial, sans-serif; font-size: 10.5px; letter-spacing: 2px;
+    text-transform: uppercase; color: #3b352b;
+    border-bottom: 3px solid #17130d; padding-bottom: 4px;
+  }
+  .topline b { color: #9c1f1f; }
+  /* ---- masthead ---- */
+  .masthead { text-align: center; padding: 5px 0 4px; border-bottom: 1px solid #17130d; }
+  .masthead h1 { font-size: 48px; line-height: 0.95; letter-spacing: 1px; font-weight: 900; }
+  .masthead h1 span { color: #9c1f1f; }
+  .masthead .tagline {
+    font-family: 'DejaVu Sans', Arial, sans-serif; font-size: 11.5px; letter-spacing: 3px;
+    text-transform: uppercase; color: #3b352b; margin-top: 3px;
+  }
+  /* ---- dateline band ---- */
+  .dateline {
+    display: flex; justify-content: space-between; align-items: center;
+    background: #17130d; color: #f9f5ea; margin-top: 6px; padding: 4px 12px;
+    font-family: 'DejaVu Sans', Arial, sans-serif;
+  }
+  .dateline .day { font-size: 19px; font-weight: 700; letter-spacing: 2px; }
+  .dateline .note { font-size: 10.5px; letter-spacing: 1px; text-transform: uppercase; opacity: 0.85; }
+  /* ---- lead ---- */
+  .lead { display: flex; gap: 20px; padding: 7px 0 7px; border-bottom: 2px solid #17130d; }
+  .lead .words { width: 590px; flex: none; }
+  .kicker {
+    font-family: 'DejaVu Sans', Arial, sans-serif; font-size: 11px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase; color: #9c1f1f;
+  }
+  .lead h2 { font-size: 36px; line-height: 1.02; font-weight: 900; margin: 3px 0 5px; }
+  .lead .deck { font-size: 14px; line-height: 1.36; color: #2b271e; }
+  .lead .facts { margin-top: 4px; font-family: 'DejaVu Sans', Arial, sans-serif; font-size: 11.5px; line-height: 1.45; color: #3b352b; }
+  .lead .facts b { color: #17130d; }
+  .lead .art { width: 350px; flex: none; }
+  .art figcaption {
+    font-family: 'DejaVu Sans', Arial, sans-serif; font-size: 10px; line-height: 1.3;
+    color: #3b352b; margin-top: 3px; text-align: center;
+  }
+  /* ---- story rows ---- */
+  .row2 { display: flex; gap: 20px; padding: 7px 0; border-bottom: 1px solid #17130d; }
+  .row3 { display: flex; gap: 18px; padding: 7px 0 6px; border-bottom: 1px solid #17130d; }
+  .story h3 { font-size: 19px; line-height: 1.06; font-weight: 900; margin: 3px 0 3px; }
+  .story p { font-size: 12px; line-height: 1.35; color: #2b271e; }
+  .story p b { color: #17130d; }
+  .row2 .story { width: 474px; flex: none; }
+  .row2 .story .pic { float: left; margin: 2px 11px 3px 0; }
+  .row3 .story { width: 306px; flex: none; }
+  .row3 .story .pic { margin-bottom: 4px; }
+  .row3 .story p { font-size: 11.5px; line-height: 1.32; }
+  .row3 .story + .story, .row2 .story + .story { border-left: 1px solid #b9b09a; padding-left: 18px; }
+  /* ---- world map band ---- */
+  .mapband { padding: 6px 0 5px; border-bottom: 1px solid #17130d; }
+  .mapband .maphead {
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: 'DejaVu Sans', Arial, sans-serif; margin-bottom: 2px;
+  }
+  .mapband .maphead .t { font-size: 10.5px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #9c1f1f; }
+  .mapband .maphead .l { font-size: 9.5px; letter-spacing: 0.5px; color: #3b352b; }
+  /* ---- briefs ---- */
+  .briefs { padding: 6px 0 5px; border-bottom: 2px solid #17130d; }
+  .briefs .bhead {
+    font-family: 'DejaVu Sans', Arial, sans-serif; font-size: 10.5px; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase; color: #9c1f1f; margin-bottom: 4px;
+  }
+  .bgrid { display: flex; gap: 18px; }
+  .bcol { width: 306px; flex: none; }
+  .bcol + .bcol { border-left: 1px solid #b9b09a; padding-left: 18px; }
+  .brief { margin-bottom: 2px; font-size: 10.5px; line-height: 1.25; color: #2b271e; }
+  .brief b { color: #17130d; }
+  .brief .where {
+    font-family: 'DejaVu Sans', Arial, sans-serif; font-size: 9px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase; color: #9c1f1f;
+  }
+  /* ---- timeline ---- */
+  .clock {
+    display: flex; gap: 0; margin-top: 6px; background: #17130d; color: #f9f5ea;
+    font-family: 'DejaVu Sans', Arial, sans-serif; padding: 6px 0;
+  }
+  .clock .cell { flex: 1; padding: 0 12px; }
+  .clock .cell + .cell { border-left: 1px solid rgba(249,245,234,0.45); }
+  .clock .t { font-size: 9.5px; letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.8; }
+  .clock .x { font-size: 10.5px; font-weight: 700; line-height: 1.25; margin-top: 2px; }
+  /* ---- strip ---- */
+  .strip {
+    display: flex; gap: 0; margin-top: 6px; background: #9c1f1f; color: #f9f5ea;
+    font-family: 'DejaVu Sans', Arial, sans-serif; padding: 6px 0;
+  }
+  .strip .cell { flex: 1; padding: 0 13px; }
+  .strip .cell + .cell { border-left: 1px solid rgba(249,245,234,0.5); }
+  .strip .lab { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.85; }
+  .strip .txt { font-size: 11.5px; font-weight: 700; line-height: 1.25; margin-top: 2px; }
+  /* ---- footer ---- */
+  .foot {
+    display: flex; justify-content: space-between; margin-top: 2px;
+    font-family: 'DejaVu Sans', Arial, sans-serif; font-size: 10px; letter-spacing: 1px;
+    text-transform: uppercase; color: #3b352b;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="topline">
+    <span>Vol. I &mdash; No. 21</span>
+    <span><b>One day</b> &middot; One page &middot; The whole world</span>
+    <span>Price: the news itself</span>
+  </div>
+
+  <div class="masthead">
+    <h1>THE WORLD <span>IN A DAY</span></h1>
+    <div class="tagline">33 stories from every continent &middot; checked against the day&rsquo;s reporting</div>
+  </div>
+
+  <div class="dateline">
+    <span class="day">SATURDAY &middot; 21 NOVEMBER 2026</span>
+    <span class="note">Lima &middot; Warsaw &middot; Wall Street &middot; Antalya</span>
+  </div>
+
+  <div class="lead">
+    <div class="words">
+      <div class="kicker">Peru &mdash; Lead story</div>
+      <h2>Quake shakes Peru, felt in Lima</h2>
+      <p class="deck">A magnitude <b>6.8 earthquake</b> strikes the Andes of Jun&iacute;n at
+      19:09 local time on Friday &mdash; 00:09 UTC on Saturday &mdash; and sends
+      Lima residents into the streets and lawmakers out of Congress.</p>
+      <p class="facts"><b>MAGNITUDE</b> 6.8, depth 129 km (IGP; USGS: 108 km). <b>NO CASUALTIES</b> or major damage reported.</p>
+    </div>
+    <div class="art">
+      <svg width="350" height="124" viewBox="0 0 350 124" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of Peru with the earthquake epicentre in Junin and Lima on the coast">
+        <rect x="0" y="0" width="350" height="124" fill="#cfe0ea"/>
+        <g transform="translate(0,2) scale(1,0.69)">
+        <path d="M118,12 L196,6 L238,30 L252,66 L232,96 L246,132 L214,164 L148,158 L112,122 L96,80 L104,38 Z" fill="#c9b98f" stroke="#8a7a52" stroke-width="2"/>
+        <text x="175" y="26" font-family="Georgia, serif" font-size="13" font-style="italic" fill="#2e5a74" text-anchor="middle">PERU</text>
+        <circle cx="196" cy="76" r="8" fill="#9c1f1f"/>
+        <circle cx="196" cy="76" r="15" fill="none" stroke="#9c1f1f" stroke-width="2"/>
+        <circle cx="196" cy="76" r="23" fill="none" stroke="#9c1f1f" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <text x="196" y="46" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#9c1f1f" text-anchor="middle">JUN&Iacute;N &middot; M6.8</text>
+        <path d="M196,76 L118,106" stroke="#17130d" stroke-width="2" stroke-dasharray="5 4"/>
+        <circle cx="118" cy="106" r="6" fill="#17130d"/>
+        <text x="118" y="124" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#17130d" text-anchor="middle">LIMA</text>
+        <text x="118" y="92" font-family="Arial, sans-serif" font-size="10" fill="#3b352b" text-anchor="middle">felt 320 km away</text>
+        <path d="M14,148 L40,138 L58,150 L84,136 L104,148 L130,138 L152,150 L178,136 L204,148 L230,138 L252,150 L278,136 L304,148 L336,140" fill="none" stroke="#9c1f1f" stroke-width="2"/>
+        <text x="175" y="168" font-family="Arial, sans-serif" font-size="10" fill="#3b352b" text-anchor="middle">19:09 local Friday &middot; 00:09 UTC Saturday</text>
+        </g>
+      </svg>
+      <figcaption>The tremor&rsquo;s epicentre in Jun&iacute;n, and the capital that felt it.</figcaption>
+    </div>
+  </div>
+
+  <div class="row2">
+    <div class="story">
+      <svg class="pic" width="150" height="92" viewBox="0 0 150 92" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Map of south-east Poland with the missile impact near Nowy Lipowiec">
+        <rect x="0" y="0" width="150" height="92" fill="#e9dfc8"/>
+        <path d="M18,16 L128,10 L138,40 L118,76 L58,82 L14,58 Z" fill="#c9b98f" stroke="#8a7a52" stroke-width="2"/>
+        <text x="75" y="30" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#3b352b" text-anchor="middle">POLAND</text>
+        <circle cx="104" cy="54" r="7" fill="#9c1f1f"/>
+        <circle cx="104" cy="54" r="12" fill="none" stroke="#9c1f1f" stroke-width="2"/>
+        <text x="75" y="88" font-family="Arial, sans-serif" font-size="9.5" font-weight="bold" fill="#17130d" text-anchor="middle">NOWY LIPOWIEC</text>
+      </svg>
+      <div class="kicker">Poland &mdash; Airspace</div>
+      <h3>A Russian missile falls on Poland</h3>
+      <p>A <b>Kh-101 cruise missile</b> crashes near Nowy Lipowiec, about 50 km from the
+      Ukrainian border, during one of Russia&rsquo;s heaviest air attacks on Ukraine.
+      PM <b>Tusk</b> calls it a deliberate provocation; NATO&rsquo;s <b>Rutte</b>
+      is due in Warsaw on Saturday.</p>
+    </div>
+    <div class="story">
+      <svg class="pic" width="150" height="92" viewBox="0 0 150 92" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Falling market chart">
+        <rect x="0" y="0" width="150" height="92" fill="#e9dfc8"/>
+        <path d="M12,16 L42,24 L66,18 L92,40 L118,58 L138,78" fill="none" stroke="#9c1f1f" stroke-width="3"/>
+        <circle cx="138" cy="78" r="5" fill="#9c1f1f"/>
+        <text x="75" y="88" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#17130d" text-anchor="middle">WALL ST &middot; &minus;3.7%</text>
+      </svg>
+      <div class="kicker">Markets &mdash; Correction</div>
+      <h3>Wall Street slides into correction</h3>
+      <p>Friday&rsquo;s rout puts the <b>S&amp;P 500 &minus;3.70%</b> and the <b>Dow &minus;1.93%</b>
+      into correction, and the <b>Nasdaq &minus;5.28%</b> wipes out its gain for the year.
+      <b>Nvidia falls 13.8%</b> as the SEC examines possible accounting issues.</p>
+    </div>
+  </div>
+
+  <div class="row3">
+    <div class="story">
+      <svg class="pic" width="306" height="44" viewBox="0 0 306 44" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Climate summit draft with fossil fuels crossed out">
+        <rect x="0" y="0" width="306" height="44" fill="#e9dfc8"/>
+        <rect x="98" y="4" width="110" height="36" fill="#f9f5ea" stroke="#17130d" stroke-width="2"/>
+        <text x="153" y="16" font-family="Georgia, serif" font-size="10" font-weight="bold" fill="#17130d" text-anchor="middle">DRAFT DEAL</text>
+        <text x="153" y="28" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#9c1f1f" text-anchor="middle" text-decoration="line-through">FOSSIL FUELS</text>
+        <line x1="112" y1="34" x2="194" y2="34" stroke="#b9b09a" stroke-width="2"/>
+        <text x="36" y="26" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#9c1f1f" text-anchor="middle">COP31</text>
+        <text x="270" y="26" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2e5a74" text-anchor="middle">OVERTIME</text>
+      </svg>
+      <div class="kicker">Antalya &mdash; Climate</div>
+      <h3>COP31 misses its deadline</h3>
+      <p>The UN climate summit runs into overtime after its Friday deadline passes
+      with no deal. The latest draft <b>never mentions fossil fuels</b>.</p>
+    </div>
+    <div class="story">
+      <svg class="pic" width="306" height="44" viewBox="0 0 306 44" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Oil tanker silhouette">
+        <rect x="0" y="0" width="306" height="44" fill="#cfe0ea"/>
+        <path d="M40,26 L120,26 L120,36 L60,36 L48,30 Z" fill="#17130d"/>
+        <rect x="96" y="14" width="8" height="12" fill="#17130d"/>
+        <rect x="108" y="19" width="6" height="7" fill="#17130d"/>
+        <path d="M0,38 Q40,33 80,38 T160,38 T240,38 T306,38 L306,44 L0,44 Z" fill="#2e5a74"/>
+        <text x="200" y="20" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#9c1f1f">14+ TANKERS</text>
+        <text x="200" y="34" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#17130d">KHARG ISLAND</text>
+      </svg>
+      <div class="kicker">The Gulf &mdash; Blockade</div>
+      <h3>Iran masses tankers at Kharg</h3>
+      <p>Satellite data puts <b>14+ Iranian-flagged tankers</b> at Kharg Island, most
+      with trackers off, as Tehran prepares a convoy to challenge the blockade.</p>
+    </div>
+    <div class="story">
+      <svg class="pic" width="306" height="44" viewBox="0 0 306 44" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Missile intercept burst over a city skyline">
+        <rect x="0" y="0" width="306" height="44" fill="#e8d9c8"/>
+        <rect x="20" y="26" width="20" height="18" fill="#5a6a76"/>
+        <rect x="48" y="20" width="16" height="24" fill="#7d8b96"/>
+        <rect x="70" y="28" width="22" height="16" fill="#5a6a76"/>
+        <circle cx="200" cy="16" r="9" fill="#e8a33d"/>
+        <path d="M200,3 L204,12 L213,10 L206,17 L215,21 L204,23 L206,31 L198,24 L191,29 L193,20 L183,16 L192,13 L190,5 L198,10 Z" fill="#9c1f1f"/>
+        <text x="258" y="21" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#17130d" text-anchor="middle">RIYADH</text>
+        <text x="258" y="35" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#9c1f1f" text-anchor="middle">3 DOWN</text>
+      </svg>
+      <div class="kicker">Riyadh &mdash; Escalation</div>
+      <h3>Missiles down over Riyadh</h3>
+      <p>Saudi defences intercept <b>three ballistic missiles</b> fired at Riyadh in
+      the early hours of Saturday, the third night of alerts in the capital.</p>
+    </div>
+  </div>
+
+  <div class="mapband">
+    <div class="maphead">
+      <span class="t">Where it happened</span>
+      <span class="l">1 Lima &middot; 2 New York &middot; 3 Riyadh &middot; 4 Kharg I. &middot; 5 Antalya &middot; 6 Brussels &middot; 7 Warsaw &middot; 8 Kyiv &middot; 9 Delhi &middot; 10 Wellington</span>
+    </div>
+    <svg width="968" height="50" viewBox="0 0 968 50" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Simplified world map with numbered markers for the day's story locations">
+      <rect x="0" y="0" width="968" height="50" fill="#cfe0ea"/>
+      <path d="M52,4 L150,2 L190,9 L205,19 L180,26 L150,22 L120,33 L84,35 L60,27 L44,15 Z" fill="#c9b98f" stroke="#8a7a52" stroke-width="1.5"/>
+      <path d="M228,22 L290,19 L310,30 L296,44 L258,48 L236,36 Z" fill="#c9b98f" stroke="#8a7a52" stroke-width="1.5"/>
+      <path d="M430,6 L640,4 L700,10 L690,22 L620,26 L560,21 L500,26 L450,19 Z" fill="#c9b98f" stroke="#8a7a52" stroke-width="1.5"/>
+      <path d="M470,26 L560,24 L580,40 L540,48 L490,43 L468,34 Z" fill="#c9b98f" stroke="#8a7a52" stroke-width="1.5"/>
+      <path d="M700,22 L790,20 L820,30 L790,40 L720,36 Z" fill="#c9b98f" stroke="#8a7a52" stroke-width="1.5"/>
+      <path d="M840,33 L920,31 L936,40 L900,46 L852,43 Z" fill="#c9b98f" stroke="#8a7a52" stroke-width="1.5"/>
+      <g font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#f9f5ea" text-anchor="middle">
+        <circle cx="283" cy="14" r="7" fill="#9c1f1f"/><text x="283" y="17">2</text>
+        <circle cx="275" cy="34" r="7" fill="#9c1f1f"/><text x="275" y="37">1</text>
+        <circle cx="598" cy="24" r="7" fill="#9c1f1f"/><text x="598" y="27">3</text>
+        <circle cx="620" cy="10" r="7" fill="#9c1f1f"/><text x="620" y="13">4</text>
+        <circle cx="552" cy="14" r="7" fill="#9c1f1f"/><text x="552" y="17">5</text>
+        <circle cx="491" cy="10" r="7" fill="#9c1f1f"/><text x="491" y="13">6</text>
+        <circle cx="536" cy="8" r="7" fill="#9c1f1f"/><text x="536" y="11">7</text>
+        <circle cx="572" cy="28" r="7" fill="#9c1f1f"/><text x="572" y="31">8</text>
+        <circle cx="685" cy="18" r="7" fill="#9c1f1f"/><text x="685" y="21">9</text>
+        <circle cx="946" cy="42" r="7" fill="#9c1f1f"/><text x="946" y="45">10</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="briefs">
+    <div class="bhead">The rest of the day &mdash; in brief</div>
+    <div class="bgrid">
+      <div class="bcol">
+        <p class="brief"><span class="where">Brussels &middot; </span><b>UK and EU seal a post-Brexit reset:</b> food checks end Mar 2028, carbon link Jan 2028, youth mobility for 100,000.</p>
+        <p class="brief"><span class="where">Washington &middot; </span><b>Trump threatens a &ldquo;tremendous tax&rdquo;</b> on US firms building AI data centres abroad.</p>
+        <p class="brief"><span class="where">Shenzhen &middot; </span><b>Trump and Xi agree humans must stay involved</b> in military AI decisions.</p>
+        <p class="brief"><span class="where">Mumbai &middot; </span><b>Record &#8377;1.22 lakh crore flows into Indian shares</b> from foreign investors, 2&ndash;20 Nov &mdash; the highest monthly inflow ever.</p>
+        <p class="brief"><span class="where">New York &middot; </span><b>Mamdani sets 2032 as the new date</b> to close Rikers Island; four borough jails, Brooklyn first in 2029.</p>
+        <p class="brief"><span class="where">New Delhi &middot; </span><b>Nepal PM Balendra Shah arrives in Delhi</b> for a two-day state visit, his first foreign trip in office.</p>
+        <p class="brief"><span class="where">Wellington &middot; </span><b>KL Rahul scores 100</b>, the first Indian opener with Test centuries in all four SENA countries.</p>
+        <p class="brief"><span class="where">The Hague &middot; </span><b>Myanmar calls the ICJ genocide ruling &ldquo;unfair&rdquo;</b>; Rohingya groups press for the ordered reparations.</p>
+      </div>
+      <div class="bcol">
+        <p class="brief"><span class="where">Kryvyi Rih &middot; </span><b>A Russian strike kills 2 and injures 42</b>, four of them children, in the barrage that also hit Poland.</p>
+        <p class="brief"><span class="where">Washington &middot; </span><b>US sanctions the Comancheros and &rsquo;Ndrangheta</b>; OFAC adds four Iranians over oil revenues.</p>
+        <p class="brief"><span class="where">London &middot; </span><b>UK pledges 1,000+ drones for Ukraine</b> in a &pound;260m package; the EU Council adopts &euro;1bn in military aid.</p>
+        <p class="brief"><span class="where">New York &middot; </span><b>Anthropic&rsquo;s second day: &minus;9.1%</b>, closing at $88.91 after a debut meant to be the biggest IPO ever.</p>
+        <p class="brief"><span class="where">Washington &middot; </span><b>The Fed splits in public:</b> Waller hints at a half-point hike; Governor Cook says rates are not high enough.</p>
+        <p class="brief"><span class="where">Chicago &middot; </span><b>The VIX nears 36</b>, its highest since April, jumping about 26% in a day as fear returns.</p>
+        <p class="brief"><span class="where">New York &middot; </span><b>The Nasdaq posts its worst week since March 2020</b> &mdash; and the Dow its worst week since March 2020 too.</p>
+        <p class="brief"><span class="where">London &middot; </span><b>Gold and metals join the sell-off</b> as haven flows reverse and the AI rout spreads beyond stocks.</p>
+      </div>
+      <div class="bcol">
+        <p class="brief"><span class="where">New York &middot; </span><b>Michael Burry banks profits</b> on half his bearish bets against Nvidia and a semiconductor ETF.</p>
+        <p class="brief"><span class="where">Santa Clara &middot; </span><b>Nvidia is down nearly 40% in November alone</b> &mdash; and 23% this week.</p>
+        <p class="brief"><span class="where">Antalya &middot; </span><b>Panama vows to block any COP31 outcome</b> that fails its eight demands, including a cap on oil production.</p>
+        <p class="brief"><span class="where">Tehran &middot; </span><b>Fars warns Gulf energy sites will be hit</b> if the tanker convoy is attacked.</p>
+        <p class="brief"><span class="where">Sanaa &middot; </span><b>The Houthis warn airlines to stay out of Saudi airspace</b> and name Riyadh&rsquo;s financial district a target.</p>
+        <p class="brief"><span class="where">Washington &middot; </span><b>Trump defers Iran strike decisions until after the New Year</b>, leaving the blockade standoff to the navy.</p>
+        <p class="brief"><span class="where">Washington &middot; </span><b>The Senate rejects an Iran war-powers resolution 51&ndash;48</b>; the response stays with the president.</p>
+        <p class="brief"><span class="where">New York &middot; </span><b>The S&amp;P 500&rsquo;s seventh straight daily drop</b> is its longest losing streak since February 2020.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="clock">
+    <div class="cell">
+      <div class="t">Fri 22:53 UTC</div>
+      <div class="x">Riyadh alert: 3 missiles down</div>
+    </div>
+    <div class="cell">
+      <div class="t">Sat 00:09 UTC</div>
+      <div class="x">M6.8 quake strikes Jun&iacute;n, Peru</div>
+    </div>
+    <div class="cell">
+      <div class="t">Sat 02:35 UTC</div>
+      <div class="x">Wall Street in correction</div>
+    </div>
+    <div class="cell">
+      <div class="t">Sat morning</div>
+      <div class="x">COP31 promises a third draft</div>
+    </div>
+    <div class="cell">
+      <div class="t">Saturday</div>
+      <div class="x">Rutte flies to Warsaw</div>
+    </div>
+  </div>
+
+  <div class="strip">
+    <div class="cell">
+      <div class="lab">Also today &middot; Las Vegas</div>
+      <div class="txt">F1 runs free practice 3 under the lights</div>
+    </div>
+    <div class="cell">
+      <div class="lab">Also today &middot; Worldwide</div>
+      <div class="txt">World Television Day, the UN day for TV</div>
+    </div>
+    <div class="cell">
+      <div class="lab">Also today &middot; Baseball</div>
+      <div class="txt">Trump pardons Pete Rose, posthumously</div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span>All events of Saturday 21 November 2026</span>
+    <span>Sources: Reuters &middot; AP &middot; BBC &middot; CNN</span>
+    <span>Compiled 21 November 2026</span>
+  </div>
+
+</div>
+</body>
+</html>
